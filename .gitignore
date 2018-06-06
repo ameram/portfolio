@@ -5,6 +5,7 @@
 *.log
 *.pot
 *.pyc
+*.xml
 __pycache__/
 local_settings.py
 db.sqlite3
