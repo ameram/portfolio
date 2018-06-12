@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include
 import Jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Jobs.views.home, name="homepage")
+    path('', Jobs.views.home, name="homepage"),
+    path('blog/', include('Blog.urls')),
+    #path('jobs/', include('Jobs.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

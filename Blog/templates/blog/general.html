@@ -28,7 +28,7 @@
                 <a class="nav-item nav-link active" href="#">Log In <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">Twitter</a>
                 <a class="nav-item nav-link" href="#">Instagram</a>
-                <a class="nav-item nav-link disabled" href="{% url 'general' %}">Blog</a>
+                <a class="nav-item nav-link active" href="{% url 'general' %}">Blog</a>
             </div>
         </div>
     </nav>
@@ -38,24 +38,25 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">I'm Ami Ramaz.</h1>
-            <p class="lead text-muted">Answer your question & find solution.</p>
-            <p>
-                <a href="#" class="btn btn-primary my-2">Ask Question</a>
-                <a href="#" class="btn btn-secondary my-2">Explore</a>
-            </p>
+            <h1 class="jumbotron-heading">Blog</h1>
         </div>
-    </section>
 
+    </section>
+    <div class="container">
+        <h2>Recent</h2>
+        <hr>
+    </div>
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
-                {% for js in jobs.all %}
+                {% for bs in blogs.all %}
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{js.image.url}}">
+                        <img class="card-img-top" src="{{bs.image.url}}">
                         <div class="card-body">
-                            <p class="card-text">{{ js.summry }}</p>
+                            <a href="">{{bs.title}}</a>
+                            {{bs.public_date_format}}
+                            <p class="card-text">{{bs.summary}}</p>
                         </div>
                     </div>
                 </div>
@@ -63,6 +64,7 @@
             </div>
         </div>
     </div>
+
 
 </main>
 
